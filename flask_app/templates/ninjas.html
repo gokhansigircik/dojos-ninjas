@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>new Ninja</title>
+</head>
+<body>
+  <h1>New Ninja</h1>
+  <form action="/create_ninja" method="POST">
+    <label>Dojo:</label>
+    <br>
+    <!-- <select name="city">
+      <option disabled selected>Select a Location</option>
+      <option>Chicago</option>
+      <option>Seattle Online</option>
+      <option>San Jose</option>
+      <option>Dallas</option>
+    </select> -->
+    <select name="dojo_id">
+        {% for dojo in all_dojos %}
+        <option name="dojo_id" value="{{dojo.id}}">{{dojo.name}}</option>
+        {% endfor %}
+    </select>
+    <br>
+    <label>First Name:</label>
+    <br>
+    <input type="text" name="first_name">
+    <br>
+    <label>Last Name:</label>
+    <br>
+    <input type="text" name="last_name">
+    <br>
+    <label>Age:</label>
+    <br>
+    <input type="number" name="age">
+    <br>
+    <br>
+    <button type="submit">Create</button>
+  </form>
+  <br>
+  <a href="/dojos">Home</a>
+</body>
+</html>
